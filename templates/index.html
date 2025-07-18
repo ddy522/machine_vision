@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>YOLO 실시간 데모</title>
+  <style>
+    body {
+      background: #121212;
+      color: #fff;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    #mainArea{
+      margin: 20px;
+    }
+
+    video, canvas, #result_area {
+      border: 2px solid #00FF00;
+      border-radius: 8px;
+      margin: 20px;
+    }
+    h1 {
+      color: #00FF00;
+    }
+    #controls {
+      margin: 20px;
+    }
+    button {
+      margin: 0 10px;
+      padding: 10px 20px;
+    }
+
+    #result_area {
+      background:#121212;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="modeTitle">YOLO 실시간 객체 탐지</h1>
+
+  <!-- ✅ 카메라 선택 -->
+  <label for="cameraSelect">카메라 선택: </label>
+  <select id="cameraSelect"></select>
+
+  <!-- ✅ 모드 버튼 -->
+  <div id="controls">
+    <button id="yoloBtn" onclick="startYoloMode">YOLO 모드</button>
+    <button id="opencvBtn" onclick="startOpenCVMode">OpenCV 모드</button>
+    <button id="captureBtn" style="display:none;">캡처 (OpenCV)</button>
+  </div>
+
+  <div id="mainArea" style="margin-left:60px;">
+    <!-- ✅ 비디오 & 캔버스 -->
+     <table>
+      <tr>
+        <td>
+          <video id="video" width="640" height="480" autoplay></video>
+        </td>
+        <td>
+          <canvas id="canvas" width="640" height="480"></canvas>
+          <div id="result_area" style="width:640px; height:480px;"></div>
+        </td>
+      </tr>
+     </table>
+
+  </div>
+
+
+
+
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

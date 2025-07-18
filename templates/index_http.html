@@ -1,0 +1,61 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>YOLO 실시간 객체 탐지</title>
+  <style>
+    body {
+      background-color: #f7f9fc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 2em;
+      color: #2c3e50;
+    }
+
+    .video-container {
+      position: relative;
+      width: 640px;
+      height: 480px;
+      margin-top: 30px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    video, canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 10px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <h1>🟢 YOLO 실시간 객체 탐지 데모</h1>
+  <div class="video-container">
+    <video id="video" width="640" height="480" autoplay muted></video>
+    <canvas id="canvas" width="640" height="480"></canvas>
+  </div>
+  <footer>
+    &copy; 2025 YOLO Demo by 도이 하
+  </footer>
+  <script src="{{ url_for('static', filename='script_http.js') }}"></script>
+</body>
+</html>

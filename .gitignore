@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual Environments
+venv/
+.venv/
+
+# VSCode settings (선택)
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
