@@ -41,7 +41,9 @@
 
 📂 실행 방법
   ✅ 1) 의존성 설치
+  ```plaintext
   pip install -r requirements.txt
+```
   
   ✅ 2) YOLO 모델 다운로드
   ultralytics 프레임워크 사용
