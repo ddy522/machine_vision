@@ -16,15 +16,16 @@
 ---
 
 ## 🚀 주요 기능
-1. **실시간 그릇 이미지 캡처**
-2. **OpenCV 기반 이미지 전처리**
-3. **머신러닝/딥러닝 모델로 불량 판별**
-4. **YOLO 실시간 탐지 (WebSocket)**
-5. **불량 판단 후 액션 처리 흐름 시연**
+1. 실시간 그릇 이미지 캡처
+2. OpenCV 기반 이미지 전처리
+3. 머신러닝/딥러닝 모델로 불량 판별
+4. YOLO 실시간 탐지 (WebSocket)
+5. 불량 판단 후 액션 처리 흐름 시연
 
 ---
 
 ## 🧩 프로젝트 구조
+
 ```plaintext
 ├── backend/               # FastAPI 서버 코드
 │   ├── main.py            # 서버 진입점
@@ -39,36 +40,49 @@
 ├── README.md
 ```
 
-📂 실행 방법
-  ✅ 1) 의존성 설치
-  ```plaintext
-  pip install -r requirements.txt
+---
+
+## 📂 실행 방법
+
+✅ 1) 의존성 설치
+
+```bash
+pip install -r requirements.txt
 ```
-  
-  ✅ 2) YOLO 모델 다운로드
-  ultralytics 프레임워크 사용
-  train2_best.pt 등 가중치 파일 경로 명시
-  
-  ✅ 3) 서버 실행
-  uvicorn main:app --reload
-  
-  ✅ 4) 웹페이지 접속
-  http://localhost:8000 접속
-  실시간 탐지 & 정지 이미지 판별 테스트
 
-🔬 주요 알고리즘 설명
-  📷 이미지 전처리
-  OpenCV: 컵 영역 Crop, Blur, 이진화, Contour 추출
-  깨짐 여부: 외곽선 원형도 계산
-  오염 여부: HSV 색공간 마스크링
+✅ 2) YOLO 모델 다운로드  
+- `ultralytics` 프레임워크 사용  
+- `train2_best.pt` 등 가중치 파일 경로 명시
 
-  🧠 모델
-  SVM / RF: 특징변수 기반 분류
-  CNN: 기본 분류 성능 향상 실험
-  YOLO: 실시간 객체 탐지
+✅ 3) 서버 실행
 
-✅ 추후 개선 계획
-실제 상용 식기세척기 라인 연계 실증
-카메라 각도/조도 변화 대응 데이터셋 확장
-전이학습(ResNet) 최적화
-Edge Device 연동 실험
+```bash
+uvicorn main:app --reload
+```
+
+✅ 4) 웹페이지 접속  
+- [http://localhost:8000](http://localhost:8000) 접속
+- 실시간 탐지 & 정지 이미지 판별 테스트
+
+---
+
+## 🔬 주요 알고리즘 설명
+
+### 📷 이미지 전처리
+- OpenCV: 컵 영역 Crop, Blur, 이진화, Contour 추출
+- 깨짐 여부: 외곽선 원형도 계산
+- 오염 여부: HSV 색공간 마스킹
+
+### 🧠 모델
+- SVM / RF: 특징변수 기반 분류
+- CNN: 기본 분류 성능 향상 실험
+- YOLO: 실시간 객체 탐지
+
+---
+
+## ✅ 추후 개선 계획
+
+- 실제 상용 식기세척기 라인 연계 실증
+- 카메라 각도/조도 변화 대응 데이터셋 확장
+- 전이학습(ResNet) 최적화
+- Edge Device 연동 실험
